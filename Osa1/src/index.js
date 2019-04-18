@@ -15,7 +15,7 @@ const Hello = (props) => {
 
     return (
       <div>
-        <h1>Greetings</h1>
+        <h1>Greetings</h1>cd 
         <Hello name="Arto" age={26 + 10} />
         <Hello name={nimi} age={ika} />
       </div>
