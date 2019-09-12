@@ -74,7 +74,6 @@ const App = () => {
   )
 }
 
-
 const Form = ({newName, handleNameChange, newNumber, handleNumberChange, onSubmit}) => {
   return(
     <form onSubmit={onSubmit}>
