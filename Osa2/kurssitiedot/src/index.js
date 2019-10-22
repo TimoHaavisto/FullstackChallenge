@@ -1,61 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Course from './components/Course'
+//import Course from './components/Course'
+import axios from 'axios'
+import App from './App'
 
-// TH 11.7.2019
+// TH Fullstack challenge 2019
 
-const App = () => {
-  const courses = [
-    {
-      name: 'Half Stack application development',
-      parts: [
-        {
-          name: 'Fundamentals of React',
-          exercises: 10,
-          id: 1
-        },
-        {
-          name: 'Using props to pass data',
-          exercises: 7,
-          id: 2
-        },
-        {
-          name: 'State of a component',
-          exercises: 14,
-          id: 3
-        },
-        {
-          name: 'Redux',
-          exercises: 11,
-          id: 4
-        }
-      ]
-    }, 
-    {
-      name: 'Node.js',
-      parts: [
-        {
-          name: 'Routing',
-          exercises: 3,
-          id: 1
-        },
-        {
-          name: 'Middlewares',
-          exercises: 7,
-          id: 2
-        }
-      ]
-    }
-  ]
+axios
+  .get('http://localhost:3001/notes')
+  .then(response => {
+    const notes = response.data
+    console.log(notes)
+    ReactDOM.render(
+      <App />,
+      document.getElementById('root')
+    )
+})
 
-  return (
-    <div>
-      <h1>Web development curriculum</h1>
-      <Course courses={courses} />
-    </div>
-  )
-}
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+
